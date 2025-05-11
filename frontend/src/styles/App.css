@@ -1,0 +1,257 @@
+
+/**
+ * @file App.css
+ * @description
+ * Global and component-level styles for the Hangman game built with React + Vite.
+ * This stylesheet defines layout, state-based visuals, and interactive feedback.
+ * Each section is clearly labeled to indicate its purpose in the application.
+ */
+
+
+/**
+ * Main layout container – centers the app on the screen
+ */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =====================================================
+   LANGUAGE SELECTION (before game starts)
+===================================================== */
+
+/**
+ * Container for language selection buttons (flag images)
+ */
+.language-picker {
+  margin-top: 20px;
+  display: flex;
+  gap: 40px;
+}
+
+
+.language-picker button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.language-picker button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.language-picker button img {
+  width: 50px;
+}
+
+/* =====================================================
+   HEADER: TITLE & INSTRUCTIONS
+===================================================== */
+
+.title {
+  color: white;
+  font-size: 20px;
+}
+
+p.instructions {
+  max-width: 352px;
+  width: 100%;
+  color: #8E8E8E;
+  font-size: 14px;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+/* =====================================================
+   GAME STATUS MESSAGES: WIN / LOSE
+===================================================== */
+
+/**
+ * Common container for both win and lose messages
+ */
+section.game-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 6px 0px;
+  max-width: 352px;
+  width: 100%;
+  border-radius: 4px;
+  min-height: 59px;
+
+  text-align: center;
+  color: white;
+}
+
+section.game-status h2 {
+  margin: 0px;
+  font-size: 20px;
+}
+
+section.game-status p {
+  margin: 0px;
+  font-size: 16px;
+}
+
+/**
+ * Background colors depending on result
+ */
+section.win {
+  background-color: #10A95B;
+}
+
+section.lose {
+  background-color: #BA2A2A;
+}
+
+/* =====================================================
+   LIVES DISPLAY (Programming Languages)
+===================================================== */
+
+/**
+ * Container for the programming language tags
+ */
+section.programming-languages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  margin-top: 36px;
+  max-width: 354px;
+  width: 100%;
+}
+
+/**
+ * Style applied to languages that have been "lost"
+ */
+.wrong-answer {
+  filter: brightness(30%); /* dim the tag */
+  position: relative;
+}
+
+/**
+ * Overlay emoji that appears on top of lost lives
+ */
+.wrong-answer::before {
+  content: "💀";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  opacity: 1;
+}
+
+/* =====================================================
+   WORD DISPLAY (Hidden & Guessed Letters)
+===================================================== */
+
+/**
+ * Container for the word letters
+ */
+section.word {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  text-align: center;
+  max-width: 700px;
+  width: 100vw;
+}
+
+/**
+ * Individual letter boxes
+ */
+.letter {
+  aspect-ratio: 1;
+  max-width: 40px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 2px;
+
+  border-bottom: 1px solid #F9F4DA;
+  background-color: #323232;
+
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+/* =====================================================
+   ON-SCREEN KEYBOARD
+===================================================== */
+
+/**
+ * Container for the letter buttons (keyboard)
+ */
+section.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 64px;
+
+  max-width: 480px;
+  width: 100%;
+}
+
+/**
+ * Base style for all keyboard buttons
+ */
+.buttonColor {
+  aspect-ratio: 1;
+  max-width: 40px;
+  width: 100%;
+
+  border: 1px solid #D7D7D7;
+  border-radius: 4px;
+  background-color: #FCBA29;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/**
+ * Color indicators for correct or incorrect guesses
+ */
+.green {
+  background-color: #10A95B;
+}
+
+.red {
+  background-color: #EC5D49;
+}
+
+/* =====================================================
+   NEW GAME BUTTON
+===================================================== */
+
+.new-game {
+  background-color: #11B5E5;
+  border-radius: 4px;
+  border: 1px solid #D7D7D7;
+  max-width: 228px;
+  width: 100%;
+
+  margin-top: 36px;
+  padding: 9.5px;
+
+  font-size: 16px;
+  color: #1E1E1E;
+  font-weight: 600;
+}

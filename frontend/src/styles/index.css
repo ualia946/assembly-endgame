@@ -1,0 +1,24 @@
+/**
+ * @file index.css
+ * @description
+ * Global styles applied to the entire HTML body.
+ * Sets up a centered flex layout with full viewport height.
+ * Also defines base font, background, and resets margins.
+ */
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+  margin: 0;
+
+  font-family: Inter, sans-serif;
+  background-color: #282726;
+  text-align: center;
+}
+
+
+
