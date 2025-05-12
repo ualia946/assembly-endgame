@@ -139,6 +139,7 @@ function App() {
       </button>
     );
   });
+  console.log(currentWord)
 
   // -------------------------
   // Lives Display (Programming Languages)
@@ -203,7 +204,7 @@ function App() {
     } else if (language === "es") {
       const spanishWords = data.results;
       word =
-        spanishWords[Math.floor(Math.random() * spanishWords.length)].Palabra.toLowerCase();
+        spanishWords[Math.floor(Math.random() * spanishWords.length)].Palabra.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     }
 
     setCurrentWord(word);
